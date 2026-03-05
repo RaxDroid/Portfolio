@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-bg: #0b0f19;
+  --clr-surface: #121829;
+  --clr-surface-alt: #192035;
+  --clr-border: rgba(255 255 255 / 0.06);
+  --clr-text: #e2e8f0;
+  --clr-text-muted: #94a3b8;
+  --clr-heading: #f8fafc;
+  --clr-accent: #0ea5a8;
+  --clr-accent-hover: #22d3ee;
+  --clr-accent-glow: rgba(14 165 168 / 0.35);
+  --clr-tag-bg: rgba(14 165 168 / 0.12);
+
+  --ff-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --ff-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --section-gap: 6rem;
+  --container: 1140px;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--ff-sans);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--clr-heading);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--clr-accent);
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+
+a:hover {
+  color: var(--clr-accent-hover);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--clr-accent);
+  color: #fff;
+}
