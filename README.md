@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# Raul Sanchez Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Overview
+This repository contains a responsive one-page portfolio for **Raul Sanchez (Software Engineer / CTO)** with sections for:
+- Hero
+- Projects (including Alrocam product suite logos)
+- Experience
+- Education
+- Skills
+- Contact and social links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React 19
+- TypeScript
+- Vite
+- Framer Motion
+- Lucide React
+- CSS (custom styling)
 
-## React Compiler
+## Getting Started
+### Prerequisites
+- Node.js 18+
+- npm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Install
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Run locally
+```bash
+npm run dev
 ```
+
+### Production build
+```bash
+npm run build
+```
+
+### Preview build
+```bash
+npm run preview
+```
+
+## Project Structure
+```text
+src/
+  components/
+    Navbar.tsx
+    Hero.tsx
+    Projects.tsx
+    Experience.tsx
+    Education.tsx
+    Skills.tsx
+    Contact.tsx
+    Footer.tsx
+  App.tsx
+  App.css
+  index.css
+public/
+  logo.svg
+  arccentral.png
+  arcdriver.png
+  archealth.png
+  arcsupply.png
+  arcunit.png
+```
+
+## Customization
+Update content directly in:
+- `src/components/Hero.tsx`
+- `src/components/Projects.tsx`
+- `src/components/Experience.tsx`
+- `src/components/Education.tsx`
+- `src/components/Skills.tsx`
+- `src/components/Contact.tsx`
+
+Update branding assets in:
+- `public/logo.svg`
+- `public/*.png` (project logos)
+
+## Deployment
+This repo includes Cloudflare configuration in `wrangler.jsonc` with `dist/` as static assets output.
+
+Typical deployment flow:
+```bash
+npm run build
+npx wrangler deploy
+```
+
+## License
+This project is provided as a personal portfolio codebase. Add a license file if you want to define reuse terms publicly.
